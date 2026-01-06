@@ -345,13 +345,13 @@ async def register_commands():
                         user = await event.client.get_entity(username)
                         user_id = user.id
                 except Exception:
-                    await event.reply("🎭 **Cipher Elite Raid System**"
+                    await event.reply("🎭 **Ozix Elite Raid System**"
                                     "❌ **Error:** Could not find specified user"
                                     "💡 **Check username/ID and try again**")
                     return
             
             if not user_id:
-                await event.reply("🎭 **Cipher Elite Raid Deactivation**"
+                await event.reply("🎭 **Ozix Elite Raid Deactivation**"
                                 "❌ **Error:** No target specified!"
                                 "💡 **Usage Options:**"
                                 "• Reply to user's message: `.dreplyraid`"
@@ -368,17 +368,18 @@ async def register_commands():
                 del active_raids["start_time"][user_id]
                 del active_raids["language"][user_id]
                 
-                await event.reply("🎭 **CIPHER ELITE RAID DEACTIVATED** 🎭"
+                await event.reply("🎭 **OZIX ELITE RAID DEACTIVATED** 🎭"
                                 f"✅ **Successfully Stopped**"
                                 f"💥 **Total Hits:** {final_hits}"
                                 f"⏱️ **Duration:** {duration}s"
                                 f"🛡️ **Elite Shield:** Restored"
-                                f"🤖 **Powered by CipherElite**")
+                                f"🤖 **Powered by OZIXElite**")
             else:
-                await event.reply("🎭 **Cipher Elite Raid System**"
+                await event.reply("🎭 **OZIX Elite Raid System**"
                                 "❌ **No active raid found for this user**"
                                 "💡 **Target is not currently being raided**")
                                 
         except Exception as e:
             await event.reply(f"🎭 **Deactivation Error:** {str(e)}")
+
 
