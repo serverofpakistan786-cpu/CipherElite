@@ -12,7 +12,7 @@ import logging
 
 class AssistantConfig:
     ALIVE_NAME = os.environ.get("ALIVE_NAME", "Master")
-    ASSISTANT_NAME = os.environ.get("ASSISTANT_NAME", "CipherAI")
+    ASSISTANT_NAME = os.environ.get("ASSISTANT_NAME", "OzixAI")
     PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
     MAX_WARNINGS = int(os.environ.get("MAX_WARNINGS", 5))
     DATA_DIR = "data"
@@ -161,7 +161,7 @@ class PersonalAssistant:
 def init(client):
     """Initialize the personal assistant"""
     global CipherElite
-    CipherElite = client
+    OzixElite = client
     assistant = PersonalAssistant()
 
     # Add commands to help menu
@@ -236,5 +236,6 @@ def init(client):
             await event.reply(message)
         except Exception as e:
             await event.reply(f"Error: {str(e)}")
+
 
     return assistant
