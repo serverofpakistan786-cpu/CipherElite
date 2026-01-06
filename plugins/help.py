@@ -19,7 +19,7 @@ def init(client_instance):
         ".quickhelp - Show this quick help guide"
     ]
     
-    quickhelp_description = "⚡ Cipher Elite Help System - Complete guide to using the advanced help features"
+    quickhelp_description = "⚡ Ozix Elite Help System - Complete guide to using the advanced help features"
     
     # Add to CMD_LIST so it appears in help menu
     CMD_LIST["quickhelp"] = {
@@ -49,7 +49,7 @@ async def register_commands():
                 # Create direct plugin help message
                 plugin_data = CMD_LIST[plugin_name]
                 
-                help_text = f"🎭 <b>Cipher Elite - {plugin_name.title()} Plugin</b>\n"
+                help_text = f"🎭 <b>Ozix Elite - {plugin_name.title()} Plugin</b>\n"
                 help_text += f"━━━━━━━━━━━━━━━━━━━━━━\n"
                 help_text += f"{plugin_data['description']}\n\n"
                 help_text += f"<b>📋 Available Commands:</b>\n\n"
@@ -71,7 +71,7 @@ async def register_commands():
                 
                 help_text += f"🔄 <b>Quick Help:</b> <code>.help {plugin_name}</code>\n"
                 help_text += f"📚 <b>All Plugins:</b> <code>.help</code>\n"
-                help_text += f"🤖 <b>Powered by Cipher Elite</b>"
+                help_text += f"🤖 <b>Powered by KING OZIX</b>"
                 
                 await event.reply(help_text, parse_mode='html')
                 return
@@ -80,7 +80,7 @@ async def register_commands():
                 # Plugin not found - show available plugins
                 available_plugins = list(CMD_LIST.keys())
                 
-                error_text = f"🎭 <b>Cipher Elite Help System</b>\n\n"
+                error_text = f"🎭 <b>Ozix Elite Help System</b>\n\n"
                 error_text += f"❌ <b>Plugin '{plugin_name}' not found!</b>\n\n"
                 error_text += f"📋 <b>Available Plugins:</b>\n"
                 
@@ -119,7 +119,7 @@ async def register_commands():
     async def list_plugins(event):
         try:
             if not CMD_LIST:
-                await event.reply("🎭 <b>Cipher Elite Plugin Manager</b>\n\n"
+                await event.reply("🎭 <b>Ozix Elite Plugin Manager</b>\n\n"
                                 "❌ <b>No plugins loaded yet!</b>\n"
                                 "💡 <b>Check your plugin directory and restart bot</b>", parse_mode='html')
                 return
@@ -127,7 +127,7 @@ async def register_commands():
             total_plugins = len(CMD_LIST)
             total_commands = sum(len(data['commands']) for data in CMD_LIST.values())
             
-            plugins_text = f"🎭 <b>Cipher Elite Loaded Plugins</b>\n"
+            plugins_text = f"🎭 <b>Ozix Elite Loaded Plugins</b>\n"
             plugins_text += f"━━━━━━━━━━━━━━━━━━━━━━\n"
             plugins_text += f"📊 <b>Statistics:</b>\n"
             plugins_text += f"⚡ <b>Total Plugins:</b> {total_plugins}\n"
@@ -166,7 +166,7 @@ async def register_commands():
             search_term = event.pattern_match.group(1).strip().lower()
             
             if not search_term:
-                await event.reply("🔍 <b>Cipher Elite Plugin Search</b>\n\n"
+                await event.reply("🔍 <b>Ozix Elite Plugin Search</b>\n\n"
                                 "❌ <b>Please provide a search term!</b>\n\n"
                                 "💡 <b>Usage:</b> <code>.findplugin spam</code>", parse_mode='html')
                 return
@@ -178,7 +178,7 @@ async def register_commands():
                     matches.append(plugin_name)
             
             if not matches:
-                await event.reply(f"🔍 <b>Cipher Elite Plugin Search</b>\n\n"
+                await event.reply(f"🔍 <b>Ozix Elite Plugin Search</b>\n\n"
                                 f"❌ <b>No plugins found matching '{search_term}'</b>\n\n"
                                 f"💡 <b>Available plugins:</b> <code>.plugins</code>\n"
                                 f"🔍 <b>Try broader search terms</b>", parse_mode='html')
@@ -229,7 +229,7 @@ async def register_commands():
             # Calculate average commands per plugin
             avg_commands = total_commands / total_plugins if total_plugins > 0 else 0
             
-            stats_text = f"📊 <b>Cipher Elite Help Statistics</b>\n"
+            stats_text = f"📊 <b>Ozix Elite Help Statistics</b>\n"
             stats_text += f"━━━━━━━━━━━━━━━━━━━━━━\n"
             stats_text += f"⚡ <b>Total Plugins:</b> {total_plugins}\n"
             stats_text += f"📂 <b>Total Commands:</b> {total_commands}\n"
@@ -256,7 +256,7 @@ async def register_commands():
             stats_text += f"• <code>.findplugin &lt;term&gt;</code> - Search plugins\n"
             stats_text += f"• <code>.helpstats</code> - This statistics view\n"
             stats_text += f"• <code>.quickhelp</code> - Quick help guide\n\n"
-            stats_text += f"🤖 <b>Powered by Cipher Elite</b>"
+            stats_text += f"🤖 <b>Powered by KING OZIX</b>"
             
             await event.reply(stats_text, parse_mode='html')
             
@@ -267,7 +267,7 @@ async def register_commands():
     @rishabh()
     async def quick_help_guide(event):
         try:
-            guide_text = f"⚡ <b>Cipher Elite Quick Help Guide</b>\n"
+            guide_text = f"⚡ <b>Ozix Elite Quick Help Guide</b>\n"
             guide_text += f"━━━━━━━━━━━━━━━━━━━━━━\n\n"
             
             guide_text += f"🎯 <b>Basic Help Commands:</b>\n"
@@ -298,9 +298,10 @@ async def register_commands():
             
             guide_text += f"📋 <b>Available in Help Menu:</b>\n"
             guide_text += f"Click the <b>Quickhelp</b> button in <code>.help</code> menu\n\n"
-            guide_text += f"🤖 <b>Powered by Cipher Elite</b>"
+            guide_text += f"🤖 <b>Powered by KING OZIX</b>"
             
             await event.reply(guide_text, parse_mode='html')
             
         except Exception as e:
             await event.reply(f"⚡ <b>Quick Help Error:</b> {str(e)}", parse_mode='html')
+
