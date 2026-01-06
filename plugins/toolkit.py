@@ -41,7 +41,7 @@ def init(client_instance):
         ".pack <reply to text> [filename] - Save text content as file",
         ".calendar [month/year] - Generate calendar image for specified month/year"
     ]
-    description = "🔧 Cipher Elite Tools - Advanced utility tools for encoding, calculations, file operations and calendar generation"
+    description = "🔧 Ozix Elite Tools - Advanced utility tools for encoding, calculations, file operations and calendar generation"
     add_handler("toolkit", commands, description)
 
 async def register_commands():
@@ -65,35 +65,35 @@ async def register_commands():
                 reply_message = await event.get_reply_message()
                 text = reply_message.text or reply_message.caption or ""
             else:
-                await event.reply("🎭 **Cipher Elite Base64 Encoder**\n\n"
+                await event.reply("🎭 **Ozix Elite Base64 Encoder**\n\n"
                                 "❌ **Error:** Please provide text to encode!\n\n"
                                 "**Usage:** `.base64enc Hello World`\n"
                                 "**Or reply** to a message with `.base64enc`")
                 return
             
             if not text:
-                await event.reply("❌ **Cipher Elite Error:** No text found to encode!")
+                await event.reply("❌ **Ozix Elite Error:** No text found to encode!")
                 return
             
-            status_msg = await event.reply("🎭 **Cipher Elite Encoder**\n\n"
+            status_msg = await event.reply("🎭 **Ozix Elite Encoder**\n\n"
                                          "🔄 **Processing:** Encoding to Base64...\n"
                                          "⚡ **Engine:** Advanced Encryption Module")
             
             try:
                 encoded = base64.b64encode(text.encode()).decode()
                 
-                await status_msg.edit(f"🎭 **Cipher Elite Base64 Encoded**\n\n"
+                await status_msg.edit(f"🎭 **Ozix Elite Base64 Encoded**\n\n"
                                      f"📝 **Original Text:** `{text[:50]}{'...' if len(text) > 50 else ''}`\n\n"
                                      f"🔐 **Encoded Result:**\n`{encoded}`\n\n"
                                      f"✅ **Status:** Successfully encoded\n"
-                                     f"🤖 **Powered by Cipher Elite**")
+                                     f"🤖 **Powered by Ozix Elite**")
             except Exception as e:
-                await status_msg.edit(f"🎭 **Cipher Elite Encoder Error**\n\n"
+                await status_msg.edit(f"🎭 **Ozix Elite Encoder Error**\n\n"
                                      f"❌ **Error:** {str(e)}\n"
                                      f"💡 **Try again with valid text**")
                 
         except Exception as e:
-            await event.reply(f"🎭 **Cipher Elite System Error**\n\n"
+            await event.reply(f"🎭 **Ozix Elite System Error**\n\n"
                             f"❌ **Error:** {str(e)}")
     
     @CipherElite.on(events.NewMessage(pattern=r"\.base64dec\s*(.*)"))
@@ -109,35 +109,35 @@ async def register_commands():
                 reply_message = await event.get_reply_message()
                 text = reply_message.text or reply_message.caption or ""
             else:
-                await event.reply("🎭 **Cipher Elite Base64 Decoder**\n\n"
+                await event.reply("🎭 **Ozix Elite Base64 Decoder**\n\n"
                                 "❌ **Error:** Please provide base64 text to decode!\n\n"
                                 "**Usage:** `.base64dec SGVsbG8gV29ybGQ=`\n"
                                 "**Or reply** to a message with `.base64dec`")
                 return
             
             if not text:
-                await event.reply("❌ **Cipher Elite Error:** No text found to decode!")
+                await event.reply("❌ **Ozix Elite Error:** No text found to decode!")
                 return
             
-            status_msg = await event.reply("🎭 **Cipher Elite Decoder**\n\n"
+            status_msg = await event.reply("🎭 **Ozix Elite Decoder**\n\n"
                                          "🔄 **Processing:** Decoding from Base64...\n"
                                          "⚡ **Engine:** Advanced Decryption Module")
             
             try:
                 decoded = base64.b64decode(text.encode()).decode()
                 
-                await status_msg.edit(f"🎭 **Cipher Elite Base64 Decoded**\n\n"
+                await status_msg.edit(f"🎭 **Ozix Elite Base64 Decoded**\n\n"
                                      f"🔐 **Encoded Text:** `{text[:50]}{'...' if len(text) > 50 else ''}`\n\n"
                                      f"📝 **Decoded Result:**\n`{decoded}`\n\n"
                                      f"✅ **Status:** Successfully decoded\n"
-                                     f"🤖 **Powered by Cipher Elite**")
+                                     f"🤖 **Powered by Ozix Elite**")
             except Exception as e:
-                await status_msg.edit(f"🎭 **Cipher Elite Decoder Error**\n\n"
+                await status_msg.edit(f"🎭 **Ozix Elite Decoder Error**\n\n"
                                      f"❌ **Error:** Invalid Base64 string\n"
                                      f"💡 **Make sure the text is properly encoded**")
                 
         except Exception as e:
-            await event.reply(f"🎭 **Cipher Elite System Error**\n\n"
+            await event.reply(f"🎭 **Ozix Elite System Error**\n\n"
                             f"❌ **Error:** {str(e)}")
     
     @CipherElite.on(events.NewMessage(pattern=r"\.(calc|calculate)\s+(.+)"))
@@ -147,13 +147,13 @@ async def register_commands():
             expression = event.pattern_match.group(2).strip()
             
             if not expression:
-                await event.reply("🎭 **Cipher Elite Calculator**\n\n"
+                await event.reply("🎭 **Ozix Elite Calculator**\n\n"
                                 "❌ **Error:** Please provide an expression to calculate!\n\n"
                                 "**Usage:** `.calc 2 + 2 * 5`\n"
                                 "**Example:** `.calculate (10 + 5) / 3`")
                 return
             
-            status_msg = await event.reply("🎭 **Cipher Elite Calculator**\n\n"
+            status_msg = await event.reply("🎭 **Ozix Elite Calculator**\n\n"
                                          f"🔢 **Expression:** `{expression}`\n"
                                          f"🔄 **Status:** Calculating...\n"
                                          f"⚡ **Engine:** Advanced Math Processor")
@@ -162,31 +162,30 @@ async def register_commands():
                 # Secure evaluation (basic protection)
                 allowed_chars = set('0123456789+-*/.() ')
                 if not all(c in allowed_chars for c in expression.replace(' ', '')):
-                    await status_msg.edit("🎭 **Cipher Elite Calculator Error**\n\n"
+                    await status_msg.edit("🎭 **Ozix Elite Calculator Error**\n\n"
                                          "❌ **Error:** Invalid characters in expression\n"
                                          "💡 **Only numbers and +, -, *, /, (, ) are allowed**")
                     return
                 
                 result = eval(expression)
                 
-                await status_msg.edit(f"🎭 **Cipher Elite Calculator Result**\n\n"
+                await status_msg.edit(f"🎭 **Ozix Elite Calculator Result**\n\n"
                                      f"🔢 **Expression:** `{expression}`\n\n"
                                      f"🎯 **Result:** `{result}`\n\n"
                                      f"✅ **Status:** Calculation completed\n"
-                                     f"🤖 **Powered by Cipher Elite**")
+                                     f"🤖 **Powered by Ozix Elite**")
                                      
             except ZeroDivisionError:
-                await status_msg.edit("🎭 **Cipher Elite Calculator Error**\n\n"
-                                     "❌ **Error:** Division by zero\n"
+                await status_msg.edit(                await status_msg.edit("🎭 **Ozix Elite Calculator Error**\n\n""❌ **Error:** Division by zero\n"
                                      "💡 **Cannot divide by zero**")
             except Exception as e:
                 await status_msg.edit("🎭 **Cipher Elite Calculator Error**\n\n"
-                                     f"❌ **Error:** Invalid expression\n"
+ Ozix                              f"❌ **Error:** Invalid expression\n"
                                      f"💡 **Check your syntax and try again**")
                 
         except Exception as e:
             await event.reply(f"🎭 **Cipher Elite System Error**\n\n"
-                            f"❌ **Error:** {str(e)}")
+     Ozix                 f"❌ **Error:** {str(e)}")
     
     @CipherElite.on(events.NewMessage(pattern=r"\.math\s+(\w+)\s+(.+)"))
     @rishabh()
@@ -196,15 +195,13 @@ async def register_commands():
             query = event.pattern_match.group(2).strip()
             
             if cmd not in math_cmds:
-                await event.reply(f"🎭 **Cipher Elite Math Engine**\n\n"
-                                f"❌ **Unknown operation:** `{cmd}`\n\n"
+                await event.reply(f"🎭                await event.reply(f"🎭 **Ozix Elite Math Engine**\n\n"*Unknown operation:** `{cmd}`\n\n"
                                 f"**Available operations:**\n"
                                 f"`{'`, `'.join(math_cmds)}`\n\n"
                                 f"**Usage:** `.math sin 90`")
                 return
             
-            status_msg = await event.reply("🎭 **Cipher Elite Math Engine**\n\n"
-                                         f"🧮 **Operation:** {cmd.upper()}\n"
+            status_msg = await eve            status_msg = await event.reply("🎭 **Ozix Elite Math Engine**\n\n"        f"🧮 **Operation:** {cmd.upper()}\n"
                                          f"🔢 **Input:** {query}\n"
                                          f"🔄 **Status:** Calculating...\n"
                                          f"⚡ **Engine:** Advanced Mathematical Processor")
@@ -230,30 +227,30 @@ async def register_commands():
                     result = math.sqrt(number)
                 elif cmd == "factorial":
                     if number < 0 or number != int(number):
-                        await status_msg.edit("🎭 **Cipher Elite Math Error**\n\n"
+                        await status_msg.edit("🎭 **Ozix Elite Math Error**\n\n"
                                              "❌ **Error:** Factorial only works with non-negative integers")
                         return
                     result = math.factorial(int(number))
                 elif cmd == "power":
                     result = math.pow(number, 2)
                 
-                await status_msg.edit(f"🎭 **Cipher Elite Math Result**\n\n"
+                await status_msg.edit(f"🎭 **Ozix Elite Math Result**\n\n"
                                      f"🧮 **Operation:** {cmd.upper()}\n"
                                      f"🔢 **Input:** `{query}`\n\n"
                                      f"🎯 **Result:** `{result}`\n\n"
                                      f"✅ **Status:** Calculation completed\n"
-                                     f"🤖 **Powered by Cipher Elite**")
+                                     f"🤖 **Powered by Ozix Elite**")
                                      
             except ValueError:
-                await status_msg.edit("🎭 **Cipher Elite Math Error**\n\n"
+                await status_msg.edit("🎭 **Ozix Elite Math Error**\n\n"
                                      "❌ **Error:** Invalid number format\n"
                                      "💡 **Please provide a valid number**")
             except Exception as e:
-                await status_msg.edit(f"🎭 **Cipher Elite Math Error**\n\n"
+                await status_msg.edit(f"🎭 **Ozix Elite Math Error**\n\n"
                                      f"❌ **Error:** {str(e)}")
                 
         except Exception as e:
-            await event.reply(f"🎭 **Cipher Elite System Error**\n\n"
+            await event.reply(f"🎭 **Ozix Elite System Error**\n\n"
                             f"❌ **Error:** {str(e)}")
     
     @CipherElite.on(events.NewMessage(pattern=r"\.unpack"))
@@ -261,7 +258,7 @@ async def register_commands():
     async def unpack_file(event):
         try:
             if not event.reply_to_msg_id:
-                await event.reply("🎭 **Cipher Elite File Unpacker**\n\n"
+                await event.reply("🎭 **Ozix Elite File Unpacker**\n\n"
                                 "❌ **Error:** Please reply to a file!\n\n"
                                 "**Usage:** Reply to any text file with `.unpack`\n"
                                 "**Supported:** .txt, .py, .js, .json, .xml, etc.")
@@ -270,10 +267,10 @@ async def register_commands():
             reply_message = await event.get_reply_message()
             
             if not reply_message.document:
-                await event.reply("❌ **Cipher Elite Error:** Please reply to a file document!")
+                await event.reply("❌ **Ozix Elite Error:** Please reply to a file document!")
                 return
             
-            status_msg = await event.reply("🎭 **Cipher Elite File Unpacker**\n\n"
+            status_msg = await event.reply("🎭 **Ozix Elite File Unpacker**\n\n"
                                          "📁 **Processing:** Downloading file...\n"
                                          "🔄 **Status:** Extracting content\n"
                                          "⚡ **Engine:** Advanced File Processor")
@@ -294,7 +291,7 @@ async def register_commands():
                     try:
                         text_content = data.decode('latin-1')
                     except:
-                        await status_msg.edit("🎭 **Cipher Elite File Unpacker Error**\n\n"
+                        await status_msg.edit("🎭 **Ozix Elite File Unpacker Error**\n\n"
                                              "❌ **Error:** File is not a text file\n"
                                              "💡 **Only text files can be unpacked**")
                         return
@@ -304,14 +301,14 @@ async def register_commands():
                 if len(text_content) > max_length:
                     text_content = text_content[:max_length] + "\n\n... (Content truncated due to length limit)"
                 
-                await status_msg.edit(f"🎭 **Cipher Elite File Unpacked**\n\n"
+                await status_msg.edit(f"🎭 **Ozix Elite File Unpacked**\n\n"
                                      f"📁 **File:** {reply_message.document.attributes[0].file_name if reply_message.document.attributes else 'Unknown'}\n"
                                      f"📊 **Size:** {len(data)} bytes\n\n"
                                      f"📄 **Content:**\n``````\n\n"
                                      f"🤖 **Powered by Cipher Elite**")
                 
             except Exception as e:
-                await status_msg.edit(f"🎭 **Cipher Elite File Unpacker Error**\n\n"
+                await status_msg.edit(f"🎭 **Ozix Elite File Unpacker Error**\n\n"
                                      f"❌ **Error:** Could not read file content\n"
                                      f"💡 **Make sure it's a valid text file**")
             finally:
@@ -321,7 +318,7 @@ async def register_commands():
                 
         except Exception as e:
             await event.reply(f"🎭 **Cipher Elite System Error**\n\n"
-                            f"❌ **Error:** {str(e)}")
+    Ozix                  f"❌ **Error:** {str(e)}")
     
     @CipherElite.on(events.NewMessage(pattern=r"\.pack\s*(.*)"))
     @rishabh()
@@ -331,7 +328,7 @@ async def register_commands():
             
             if not event.reply_to_msg_id:
                 await event.reply("🎭 **Cipher Elite Text Packer**\n\n"
-                                "❌ **Error:** Please reply to a text message!\n\n"
+     Ozix                     "❌ **Error:** Please reply to a text message!\n\n"
                                 "**Usage:** Reply to any text with `.pack [filename]`\n"
                                 "**Example:** `.pack my_script.py`")
                 return
@@ -339,16 +336,11 @@ async def register_commands():
             reply_message = await event.get_reply_message()
             
             if not reply_message.text:
-                await event.reply("❌ **Cipher Elite Error:** Replied message contains no text!")
-                return
-            
-            # Generate filename
-            if filename_input:
-                filename = filename_input
+                await event.reply("❌                 await event.reply("❌ **Ozix Elite Error:                await event.reply("❌ **Ozix Elite Error:                await event.reply("❌ **Ozi El                filename = filename_input
             else:
                 filename = f"cipher_elite_pack_{int(time.time())}.txt"
             
-            status_msg = await event.reply("🎭 **Cipher Elite Text Packer**\n\n"
+            status_msg = await event.reply("🎭 **Ozix Elite Text Packer**\n\n"
                                          f"📝 **Creating:** {filename}\n"
                                          f"🔄 **Status:** Packing text content...\n"
                                          f"⚡ **Engine:** Advanced File Generator")
@@ -366,7 +358,7 @@ async def register_commands():
                 await event.client.send_file(
                     event.chat_id,
                     temp_filepath,
-                    caption=f"🎭 **Cipher Elite Text Packed**\n\n"
+                    caption=f"🎭 **Ozix Elite Text Packed**\n\n"
                            f"📁 **Filename:** `{filename}`\n"
                            f"📊 **Size:** {len(reply_message.text)} characters\n"
                            f"✅ **Status:** Successfully packed\n"
@@ -380,12 +372,12 @@ async def register_commands():
                 os.remove(temp_filepath)
                 
             except Exception as e:
-                await status_msg.edit(f"🎭 **Cipher Elite Text Packer Error**\n\n"
+                await status_msg.edit(f"🎭 **Ozix Elite Text Packer Error**\n\n"
                                      f"❌ **Error:** Could not create file\n"
                                      f"💡 **Please try again**")
                 
         except Exception as e:
-            await event.reply(f"🎭 **Cipher Elite System Error**\n\n"
+            await event.reply(f"🎭 **Ozix Elite System Error**\n\n"
                             f"❌ **Error:** {str(e)}")
     
     @CipherElite.on(events.NewMessage(pattern=r"\.calendar\s*(.*)"))
@@ -407,24 +399,24 @@ async def register_commands():
                         year = int(year_str)
                         
                         if month < 1 or month > 12:
-                            await event.reply("🎭 **Cipher Elite Calendar Error**\n\n"
+                            await event.reply("🎭 **Ozix Elite Calendar Error**\n\n"
                                             "❌ **Error:** Invalid month! Use 1-12\n\n"
                                             "**Usage:** `.calendar 12/2024`")
                             return
                     except ValueError:
-                        await event.reply("🎭 **Cipher Elite Calendar**\n\n"
+                        await event.reply("🎭 **Ozix Elite Calendar**\n\n"
                                         "❌ **Error:** Invalid format!\n\n"
                                         "**Usage:** `.calendar 12/2024`\n"
                                         "**Example:** `.calendar 1/2025`")
                         return
                 else:
-                    await event.reply("🎭 **Cipher Elite Calendar**\n\n"
+                    await event.reply("🎭 **Ozix Elite Calendar**\n\n"
                                     "❌ **Error:** Invalid format!\n\n"
                                     "**Usage:** `.calendar 12/2024`\n"
                                     "**Or use:** `.calendar` for current month")
                     return
             
-            status_msg = await event.reply("🎭 **Cipher Elite Calendar Generator**\n\n"
+            status_msg = await event.reply("🎭 **Ozix Elite Calendar Generator**\n\n"
                                          f"📅 **Generating:** {month}/{year}\n"
                                          f"🔄 **Status:** Creating calendar...\n"
                                          f"⚡ **Engine:** Advanced Calendar System")
@@ -435,19 +427,19 @@ async def register_commands():
                 cal = calendar.month(year, month)
                 month_name = calendar.month_name[month]
                 
-                calendar_text = f"🎭 **Cipher Elite Calendar**\n\n"
+                calendar_text = f"🎭 **Ozix Elite Calendar**\n\n"
                 calendar_text += f"📅 **{month_name} {year}**\n\n"
                 calendar_text += f"``````\n\n"
                 calendar_text += f"✅ **Generated successfully**\n"
-                calendar_text += f"🤖 **Powered by Cipher Elite**"
+                calendar_text += f"🤖 **Powered by Ozix Elite**"
                 
                 await status_msg.edit(calendar_text)
                 
             except Exception as e:
-                await status_msg.edit(f"🎭 **Cipher Elite Calendar Error**\n\n"
+                await status_msg.edit(f"🎭 **Ozix Elite Calendar Error**\n\n"
                                      f"❌ **Error:** Could not generate calendar\n"
                                      f"💡 **Please check the month/year values**")
                 
         except Exception as e:
-            await event.reply(f"🎭 **Cipher Elite System Error**\n\n"
+            await event.reply(f"🎭 **Ozix Elite System Error**\n\n"
                             f"❌ **Error:** {str(e)}")
