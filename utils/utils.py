@@ -1,8 +1,9 @@
 from telethon import TelegramClient
 
-CipherElite = None
+ozixElite = None
 
 def init_client(client_instance):
-    global CipherElite
-    CipherElite = client_instance
+    global ozixElite
+    ozixElite = client_instance
+
     
