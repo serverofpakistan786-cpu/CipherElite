@@ -27,7 +27,7 @@ class PersonalAssistant:
         self.data = {
             "config": {
                 "alive_name": os.environ.get("ALIVE_NAME", "Master"),
-                "assistant_name": os.environ.get("ASSISTANT_NAME", "CipherAI"),
+                "assistant_name": os.environ.get("ASSISTANT_NAME", "OzixAI"),
                 "pmpermit_pic": os.environ.get("PMPERMIT_PIC", DEFAULT_PMPERMIT_PIC),
                 "use_pic": True,
                 "max_warnings": int(os.environ.get("MAX_WARNINGS", 5)),
@@ -292,3 +292,4 @@ def init(client):
         await event.reply(f"🚫 User `{uid}` has been blocked.")
 
     return assistant
+
