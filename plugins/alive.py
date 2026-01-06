@@ -109,7 +109,7 @@ def get_readable_time(seconds: float) -> str:
 
 # Raw-string templates to preserve special characters and spacing
 ALIVE_STYLES = [
-    r"""⚡ 𝘾𝙄𝙋𝙃𝙀𝙍 𝙀𝙇𝙄𝙏𝙀 𝙎𝙔𝙎𝙏𝙀𝙈 ⚡
+    r"""⚡ 𝗢𝗭𝗜𝗫 𝙀𝙇𝙄𝙏𝙀 𝙎𝙔𝙎𝙏𝙀𝙈 ⚡
 
 ▰▱▰▱▰▱▰▱▰▱▰▱▰▱
 ➺ 𝙈𝘼𝙎𝙏𝙀𝙍: {name}
@@ -122,7 +122,7 @@ ALIVE_STYLES = [
 ⚔️ 𝘽𝙍𝘼𝙉𝘾𝙃: MASTER
 
 ▰▱▰▱ ELITE NETWORK ▰▱▰▱""",
-    r"""╔══『 CIPHER ELITE 』══╗
+    r"""╔══『 𝗢𝗭𝗜𝗫 ELITE 』══╗
 
 ◈ CODENAME: {name}
 ◈ VERSION: [1.0]
@@ -147,7 +147,7 @@ PING_STYLES = [
 ◈ SPEED: [{speed}ms]
 ◈ UPTIME: [{uptime}]
 
-╚══『 CIPHER ELITE 』══╝""",
+╚══『 𝗢𝗭𝗜𝗫 ELITE 』══╝""",
 ]
 
 user_config = UserConfig()
@@ -391,3 +391,4 @@ async def reset_ping(event):
     user_config.__init__()  # reset defaults
     save_config()
     await event.reply("✅ Ping settings reset to default")
+
