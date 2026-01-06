@@ -22,5 +22,6 @@ class Config:
     # Version Info
     VERSION = "1.0.0"
     BRANCH = "elite"
-    UPSTREAM_REPO = "https://github.com/rishabhops/CipherElite"
+    UPSTREAM_REPO = "https://github.com/serverofpakistan786-cpu/CipherElite"
+
 
