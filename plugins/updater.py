@@ -23,9 +23,9 @@ from utils.utils import CipherElite
 from utils.decorators import rishabh
 
 # ──────────────────────────────────────────────────────────────
-GITHUB_OWNER  = "rishabhops"
-GITHUB_REPO   = "CipherElite"
-GITHUB_BRANCH = "elite"
+GITHUB_OWNER  = ""
+GITHUB_REPO   = ""
+GITHUB_BRANCH = ""
 API_BASE      = f"https://api.github.com/repos/{GITHUB_OWNER}/{GITHUB_REPO}"
 RAW_BASE      = f"https://raw.githubusercontent.com/{GITHUB_OWNER}/{GITHUB_REPO}/{GITHUB_BRANCH}"
 # ──────────────────────────────────────────────────────────────
@@ -170,3 +170,4 @@ def init(client):
     # no-op so your loader doesn’t complain
     pass
     
+
