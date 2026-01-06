@@ -142,7 +142,7 @@ async def register_commands():
 
             # 4. Send
             caption = (
-                f"🎭 **Cipher Elite Play Store**\n\n"
+                f"🎭 **King ozix Play Store**\n\n"
                 f"📲 **App:** `{fullapp_name}`\n"
                 f"👨‍💻 **Developer:** [{dev_name}]({dev_link})\n"
                 f"⭐️ **Rating:** `{rating} ⭐`\n"
