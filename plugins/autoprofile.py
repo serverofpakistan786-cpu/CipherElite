@@ -118,7 +118,7 @@ def generate_time_pfp():
     # Draw Watermark
     draw.text(
         (512, 850), 
-        "CIPHER ELITE", 
+        "OZIX ELITE", 
         font=small_font, 
         fill="#ffffff", 
         anchor="mm",
@@ -136,7 +136,7 @@ async def loop_autoname(client):
         try:
             ist_now = get_ist_time()
             time_str = ist_now.strftime("%H:%M")
-            new_name = f"⚡ {time_str} | Cipher Elite"
+            new_name = f"⚡ {time_str} | Ozix Elite"
             await client(functions.account.UpdateProfileRequest(first_name=new_name))
         except FloodWaitError as e:
             await notify_user(client, f"⏳ AutoName FloodWait: {e.seconds}s")
@@ -202,7 +202,7 @@ async def register_commands():
     @CipherElite.on(events.NewMessage(pattern=r"\.autobio(?:\s+(.+))?"))
     @rishabh()
     async def enable_autobio(event):
-        bio_text = event.pattern_match.group(1) or "Cipher Elite"
+        bio_text = event.pattern_match.group(1) or "Ozix Elite"
         if RUNNING_TASKS["autobio"]: return await event.reply("⚠️ Running")
         RUNNING_TASKS["autobio"] = True
         CipherElite.loop.create_task(loop_autobio(event.client, bio_text))
