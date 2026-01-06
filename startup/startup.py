@@ -54,7 +54,7 @@ async def display_startup_message(client, plugins):
     user_name = (await client.get_me()).first_name
     banner = f"""
 \033[1;36m=====================
- CIPHER ELITE USERBOT
+ OZIX ELITE USERBOT
 =====================
 \033[1;32mStatus  : ONLINE
 Python  : v{system_info["python"]}
