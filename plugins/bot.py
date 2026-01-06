@@ -34,7 +34,7 @@ def add_handler(plugin_name, commands, description=""):
             "description": description
         }
         # Debug Log
-        print(f"🎭 Cipher Elite: Registered '{plugin_name}' ({len(CMD_LIST[plugin_name]['commands'])} cmds)")
+        print(f"🎭 Ozix Elite: Registered '{plugin_name}' ({len(CMD_LIST[plugin_name]['commands'])} cmds)")
 
 def remove_handler(plugin_name):
     """Removes a plugin from the Help Menu (Used by Uninstaller)."""
@@ -64,7 +64,7 @@ async def init_bot():
             total_commands = sum(len(data['commands']) for data in CMD_LIST.values())
             
             text = (
-                "✨ <b>CIPHER ELITE USERBOT</b> ✨\n"
+                "✨ <b>KING OZIX USERBOT</b> ✨\n"
                 "━━━━━━━━━━━━━━━━━━━━━━\n"
                 f"⚡ <b>Loaded Plugins:</b> <code>{total_plugins}</code>\n"
                 f"📂 <b>Commands:</b> <code>{total_commands}</code>\n\n"
@@ -99,7 +99,7 @@ async def init_bot():
                 buttons.append([Button.inline("Next Page →", f"help_page_1")])
             
             result = builder.article(
-                title="Cipher Elite Help Menu",
+                title="Ozix Elite Help Menu",
                 text=text,
                 buttons=buttons,
                 parse_mode='html'
@@ -122,14 +122,14 @@ async def init_bot():
                 # Special 'quickhelp' page
                 if plugin_name == "quickhelp":
                     text = (
-                        f"⚡ <b>Cipher Elite Quick Help</b>\n"
+                        f"⚡ <b>Ozix Elite Quick Help</b>\n"
                         f"━━━━━━━━━━━━━━━━━━━━━━\n\n"
                         f"🎯 <b>Basic Commands:</b>\n"
                         f"• <code>.help</code> - Menu\n"
                         f"• <code>.plugins</code> - List all\n"
                         f"• <code>.install</code> - Add plugin\n"
                         f"• <code>.uninstall</code> - Remove plugin\n\n"
-                        f"🤖 <b>Powered by Cipher Elite</b>"
+                        f"🤖 <b>Powered by Ozix Elite</b>"
                     )
                 else:
                     # Standard Plugin Page
@@ -165,7 +165,7 @@ async def init_bot():
             total_pages = math.ceil(len(plugin_names) / PLUGINS_PER_PAGE)
             
             text = (
-                "✨ <b>CIPHER ELITE USERBOT</b> ✨\n"
+                "✨ <b>KING OZIX USERBOT</b> ✨\n"
                 "━━━━━━━━━━━━━━━━━━━━━━\n"
                 f"⚡ <b>Loaded Plugins:</b> <code>{len(plugin_names)}</code>\n"
                 f"📂 <b>Page:</b> <code>{page+1}/{total_pages}</code>\n\n"
@@ -234,3 +234,4 @@ async def init_bot():
 async def register_commands():
     pass
     
+
