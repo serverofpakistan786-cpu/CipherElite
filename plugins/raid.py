@@ -25,7 +25,7 @@ import random
 import time
 import re
 
-CIPHER_ELITE_OWNER = 5470956337
+OZIX_ELITE_OWNER = 7088510448
 
 active_raids = {
     "users": {},
@@ -36,7 +36,7 @@ active_raids = {
 
 RAID_BANNER = """
 🎭 ═══════════════════════════════════════ 🎭
-      𝗖𝗜𝗣𝗛𝗘𝗥 𝗘𝗟𝗜𝗧𝗘 𝗥𝗔𝗜𝗗 𝗦𝗬𝗦𝗧𝗘𝗠 
+      OZIX ELITE RAID SYSTEM 
 🎭 ═══════════════════════════════════════ 🎭
 """
 
@@ -149,7 +149,7 @@ ENGLISH_RAIDS = [
 ]
 
 ACTIVATION_MESSAGE = """
-🎭 **CIPHER ELITE RAID ACTIVATED** 🎭
+🎭 **OZIX ELITE RAID ACTIVATED** 🎭
 
 🎯 **Target:** {}
 🆔 **Target ID:** `{}`
@@ -158,7 +158,7 @@ ACTIVATION_MESSAGE = """
 🛡️ **Protection:** Elite Shield Active
 ✅ **Status:** Operational
 
-🤖 **Powered by CipherElite**
+🤖 **Powered by OZIXElite**
 """
 
 def init(client_instance):
@@ -167,7 +167,7 @@ def init(client_instance):
         ".dreplyraid - ❌ Deactivate active raid system", 
         ".raidinfo - 📊 Display raid statistics and data"
     ]
-    description = "🎭 Cipher Elite Raid System - Advanced bilingual raiding with flexible targeting"
+    description = "🎭 OZIX Elite Raid System - Advanced bilingual raiding with flexible targeting"
     add_handler("raid", commands, description)
 
 async def parse_user_target(event, args):
@@ -381,3 +381,4 @@ async def register_commands():
                                 
         except Exception as e:
             await event.reply(f"🎭 **Deactivation Error:** {str(e)}")
+
