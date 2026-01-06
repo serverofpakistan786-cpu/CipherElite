@@ -235,7 +235,7 @@ async def register_commands():
             libs_msg = f"\n📦 **Libs Added:** `{installed_count}`" if installed_count > 0 else ""
             
             await status.edit(
-                f"🎭 **Cipher Elite Manager**\n\n"
+                f"🎭 **Ozix Elite Manager**\n\n"
                 f"✅ **Plugin {action}:** `{file_name}`"
                 f"{libs_msg}\n"
                 f"✨ **Status:** Active!"
