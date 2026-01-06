@@ -45,21 +45,21 @@ conversation_history = {}
 # System prompt to define AI identity and behavior
 SYSTEM_PROMPT = {
     "role": "system",
-    "content": "You are Cipher AI, created by @thanosceo for the CipherElite Userbot. Provide short, natural, and accurate answers. Return only the final result without any thinking process, internal deliberations, or <think> blocks. Avoid verbose explanations, technical model details, or markdown unless requested."
+    "content": "You are Ozix AI, created by @OZIXCEO for the OzixElite Userbot. Provide short, natural, and accurate answers. Return only the final result without any thinking process, internal deliberations, or <think> blocks. Avoid verbose explanations, technical model details, or markdown unless requested."
 }
 
 def init(client):
     """Initialize the NVIDIA AI plugin"""
     commands = [
-        f".ai <question> — Ask Cipher AI a question",
+        f".ai <question> — Ask Ozix AI a question",
         f".aiset <key> — Set NVIDIA API key",
         f".aitest — Test AI connection",
         f".aiclear — Clear conversation history",
         f".aistatus — Show AI status"
     ]
-    description = "Interact with Cipher AI powered by NVIDIA API"
+    description = "Interact with Ozix AI powered by NVIDIA API"
     add_handler("cipher_ai", commands, description)
-    print("🤖 CIPHER AI Plugin initialized successfully")
+    print("🤖 Ozix AI Plugin initialized successfully")
     return True
 
 async def make_nvidia_request(messages, temperature=0.6, top_p=0.7, max_tokens=2048):
@@ -114,7 +114,7 @@ async def ai_handler(event):
             await event.reply("📝 **Query too long!** Please keep your question under 2000 characters.")
             return
         
-        thinking_msg = await event.reply("🤔 **Cipher AI is thinking...**")
+        thinking_msg = await event.reply("🤔 **Ozix AI is thinking...**")
         print(f"🤖 Processing AI query: {query[:50]}...")
         
         chat_id = event.chat_id
@@ -145,11 +145,11 @@ async def ai_handler(event):
         
         if len(response) > 3500:
             parts = [response[i:i+3500] for i in range(0, len(response), 3500)]
-            await thinking_msg.edit(f"🤖 **Cipher AI Response (Part 1/{len(parts)}):**\n\n{parts[0]}")
+            await thinking_msg.edit(f"🤖 **Ozix AI Response (Part 1/{len(parts)}):**\n\n{parts[0]}")
             for i, part in enumerate(parts[1:], 2):
                 await event.reply(f"🤖 **Part {i}/{len(parts)}:**\n\n{part}")
         else:
-            formatted_response = f"🤖 **Cipher AI Response:**\n\n{response}\n\n💭 **Query:** `{query[:100]}{'...' if len(query) > 100 else ''}`"
+            formatted_response = f"event Ozix AI Response:**\n\n{response}\n\n💭 **Query:** `{query[:100]}{'...' if len(query) > 100 else ''}`"
             await thinking_msg.edit(formatted_response)
         
         print(f"✅ AI response sent successfully")
@@ -207,12 +207,12 @@ async def aitest_handler(event):
             await event.reply(f"❌ **No API key set.** Use `{ELITE_BOT_USERNAME} .aiset <key>` first.")
             return
         
-        test_msg = await event.reply("🧪 **Testing Cipher AI connection...**")
+        test_msg = await event.reply("🧪 **Testing Ozix AI connection...**")
         print("🧪 Testing NVIDIA AI connection...")
         
         test_messages = [
             SYSTEM_PROMPT,
-            {"role": "user", "content": "Say 'Hello, I am Cipher AI!' in exactly those words."}
+            {"role": "user", "content": "Say 'Hello, I am Ozix AI!' in exactly those words."}
         ]
         
         response = await asyncio.wait_for(
@@ -224,7 +224,7 @@ async def aitest_handler(event):
             await test_msg.edit(f"❌ **Test Failed:**\n\n{response}")
             print(f"❌ AI test failed: {response}")
         else:
-            await test_msg.edit(f"✅ **Test Successful!**\n\n🤖 **Cipher AI Response:** {response}\n\n🎉 Your AI is working correctly!")
+            await test_msg.edit(f"✅ **Test Successful!**\n\n🤖 **Ozix AI Response:** {response}\n\n🎉 Your AI is working correctly!")
             print(f"✅ AI test successful: {response}")
         
     except Exception as e:
@@ -258,7 +258,7 @@ async def aistatus_handler(event):
         history_count = len(conversation_history)
         total_messages = sum(len(history) for history in conversation_history.values())
         
-        status_msg = f"""📊 **Cipher AI Status:**
+        status_msg = f"""📊 **Ozix AI Status:**
 
 🔑 **API Key:** `{api_status}`
 🌐 **Endpoint:** `{NVIDIA_BASE_URL}`
@@ -282,4 +282,4 @@ async def aistatus_handler(event):
         await event.reply(f"❌ **Error:** {str(e)}")
         print(f"❌ Status Error: {e}")
 
-print("CIPHER AI Plugin loaded successfully")
+print("OZIX AI Plugin loaded successfully")
