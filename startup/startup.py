@@ -81,12 +81,12 @@ async def configure_bot_via_botfather(user_client, bot_username):
     bot_name = f"{user_first_name}'s Assistant"
     bot_bio = (
         f"🤖 Personal Assistant Bot for {user_first_name}\n\n"
-        "🔰 Cipher Elite Userbot Assistant\n"
-        "⚡ Powered by thanospros\n"
+        "🔰 Ozix Elite Userbot Assistant\n"
+        "⚡ Powered by OZIXCEO\n"
         "🛡️ Advanced Automation & Management\n\n"
-        "🔗 Support: @thanosprosss"
+        "🔗 Support: @OZIXCEO"
     )
-    bot_about = f"🤖 Assistant for {user_first_name} | Cipher Elite | @thanosprosss"
+    bot_about = f"🤖 Assistant for {user_first_name} | Ozix Elite | @OZIXCEO"
 
     # Check only the bot name
     try:
@@ -294,7 +294,7 @@ async def send_startup_message(bot_client, user_client, plugins, system_info, co
         bot_me = await bot_client.get_me()
         message = (
             "=====================\n"
-            "**CIPHER ELITE USERBOT**\n"
+            "**OZIX ELITE USERBOT**\n"
             "=====================\n"
             f"**Status**: ONLINE\n"
             f"**User**: {user.first_name} (`{user.id}`)\n"
@@ -309,8 +309,8 @@ async def send_startup_message(bot_client, user_client, plugins, system_info, co
         )
         
         # Create button with support link
-        buttons = [[Button.url("Support", "https://t.me/thanosprosss")]]
-        logo_url = "https://files.catbox.moe/tocisn.png"
+        buttons = [[Button.url("Support", "https://t.me/+M9pETo_ZmGFhODk9")]]
+        logo_url = "https://files.catbox.moe/8cnwvx.jpg"
         
         # Try to get the group entity through user client first, then share it with bot
         try:
@@ -355,7 +355,7 @@ async def send_startup_message(bot_client, user_client, plugins, system_info, co
 
 async def start_bot(client):
     print("\n\033[1;36m==================================================")
-    print("      Initializing CIPHER ELITE USERBOT")
+    print("      Initializing OZIX ELITE USERBOT")
     print("==================================================\033[0m\n")
 
     # Validate configuration
