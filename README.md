@@ -106,7 +106,7 @@ Developed under the **Thanos Pro Organization**, CipherElite represents cutting-
 ### 📞 Get Help
 - **Updates Channel**: [@THANOS_PRO](https://t.me/THANOS_PRO) - Latest updates and announcements
 - **Support Group**: [@thanosprosss](https://t.me/thanosprosss) - Community support and discussions
-- **Direct Contact**: [@thanosceo](https://t.me/thanosceo) - Developer contact
+- **Direct Contact**: [@thanosceo](https://t.me/OZIXCEO) - Developer contact
 
 ---
 
