@@ -50,7 +50,7 @@ def authorized_users_only(func):
             pass
         
         # 🎭 Deny access for non-sudo, non-admin users
-        await event.reply("🎭 **Cipher Elite Access Denied**\n\n"
+        await event.reply("🎭 **Ozix Elite Access Denied**\n\n"
                          "❌ **This command is restricted to admins only!**\n"
                          "🛡️ **Required:** Admin privileges or sudo access")
         return
@@ -83,9 +83,9 @@ def rishabh_help():
             
             if sender_id not in Config.SUDO_USERS:
                 await event.answer(
-                    "🎭 **Cipher Elite Access Restricted!**\n\n"
+                    "🎭 **Ozix Elite Access Restricted!**\n\n"
                     "🔒 **Deploy your own Cipher Elite Bot:**\n"
-                    "github.com/rishabhops/CipherElite\n\n"
+                    "github.com/pmozix/ozixElite\n\n"
                     "⚡ **Unauthorized access denied**", 
                     alert=True
                 )
@@ -93,3 +93,4 @@ def rishabh_help():
             return await func(event)
         return wrapper
     return decorator
+
