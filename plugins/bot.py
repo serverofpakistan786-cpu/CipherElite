@@ -41,7 +41,7 @@ def remove_handler(plugin_name):
     try:
         if plugin_name in CMD_LIST:
             del CMD_LIST[plugin_name]
-            print(f"🗑 Cipher Elite: Removed '{plugin_name}' from Help Menu.")
+            print(f"🗑 ozix Elite: Removed '{plugin_name}' from Help Menu.")
             return True
     except Exception as e:
         print(f"Error removing handler: {e}")
@@ -234,4 +234,5 @@ async def init_bot():
 async def register_commands():
     pass
     
+
 
